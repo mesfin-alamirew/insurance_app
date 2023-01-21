@@ -5,7 +5,7 @@ import useFetch from '../hooks/useFetch.js';
 import InsuranceItem from '../components/InsuranceItem.js';
 export default function ResultScreen({ navigation }) {
   const { data, loading, error } = useFetch(
-    'http://172.20.196.34:8800/api/insurances'
+    'http://192.168.43.112:8800/api/insurances'
   );
   const ans = navigation.getParam('answer');
   console.log(data.length);

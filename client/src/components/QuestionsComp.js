@@ -6,7 +6,7 @@ import StepOne from './StepOne';
 const QuestionsComp = ({ navigation }) => {
   const [step, setStep] = useState(0);
   const { data, loading, error } = useFetch(
-    'http://172.20.196.34:8800/api/questions'
+    'http://192.168.43.112:8800/api/questions'
   );
 
   const nextStep = () => {
