@@ -3,10 +3,9 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import useFetch from '../hooks/useFetch.js';
 import InsuranceItem from '../components/InsuranceItem.js';
+import ApiManager from '../utils/apiManager.js';
 export default function ResultScreen({ navigation }) {
-  const { data, loading, error } = useFetch(
-    'http://192.168.43.112:8800/api/insurances'
-  );
+  const { data, loading, error } = useFetch(`${ApiManager}insurances`);
   const ans = navigation.getParam('answer');
   console.log(data.length);
   const strAns = ans.toString();
