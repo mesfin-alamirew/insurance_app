@@ -3,11 +3,12 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Questions } from '../data.js';
 import useFetch from '../hooks/useFetch.js';
 import StepOne from './StepOne';
-import ApiManager from '../utils/apiManager.js';
+
+import * as c from '../utils/Constants.js';
 const QuestionsComp = ({ navigation }) => {
-  console.log('Base URL = ' + ApiManager);
+  //console.log('API Manager=' + BaseURL);
   const [step, setStep] = useState(0);
-  const { data, loading, error } = useFetch(`${ApiManager}questions`);
+  const { data, loading, error } = useFetch(`${c.API_URL}questions`);
 
   const nextStep = () => {
     if (step < data.length - 1) {

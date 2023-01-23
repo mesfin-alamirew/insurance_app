@@ -3,12 +3,14 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import useFetch from '../hooks/useFetch.js';
 import InsuranceItem from '../components/InsuranceItem.js';
-import ApiManager from '../utils/apiManager.js';
-export default function ResultScreen({ navigation }) {
-  const { data, loading, error } = useFetch(`${ApiManager}insurances`);
-  const ans = navigation.getParam('answer');
-  console.log(data.length);
-  const strAns = ans.toString();
+import * as c from '../utils/Constants.js';
+export default function ResultScreen({ route, navigation }) {
+  const { data, loading, error } = useFetch(`${c.API_URL}insurances`);
+  const { answer } = route.params;
+
+  //const ans = navigation.getParam('answer');
+  // console.log(data.length);
+  const strAns = answer.toString();
   const arrayAns = Array.prototype.slice.call(strAns);
 
   if (loading || loading === 'undefined' || data.length === 0) {
@@ -33,7 +35,7 @@ export default function ResultScreen({ navigation }) {
         </Text>
       </View>
       <View style={{ padding: 20 }}>
-        {ans.map((ab, i) => (
+        {answer.map((ab, i) => (
           <Text key={i} style={{ width: 300, height: 20 }}>
             {ab}
           </Text>

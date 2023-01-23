@@ -1,23 +1,34 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import Services from './ServicesScreen';
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
-    <View style={styles.headerTextContainer}>
-      <Text style={styles.headerText}>Good Morning</Text>
-
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoHeaderText}>Get COVID Cover!</Text>
-        <Text style={styles.infoBodyText}>
-          Introducing annual COVID cover for as low as Birr 3000! Cover yourself
-          and loved ones today!
-        </Text>
+    <>
+      <View>
         <View style={styles.btnContainer}>
-          <Button color="teal" title="Get Cover" />
+          <Button
+            color="teal"
+            title="Login"
+            onPress={() => navigation.navigate('Login')}
+          />
         </View>
       </View>
-      <Services />
-    </View>
+      <View style={styles.headerTextContainer}>
+        <Text style={styles.headerText}>Good Morning</Text>
+
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoHeaderText}>Get COVID Cover!</Text>
+          <Text style={styles.infoBodyText}>
+            Introducing annual COVID cover for as low as Birr 3000! Cover
+            yourself and loved ones today!
+          </Text>
+          <View style={styles.btnContainer}>
+            <Button color="teal" title="Get Cover" />
+          </View>
+        </View>
+        <Services navigation={navigation} />
+      </View>
+    </>
   );
 }
 

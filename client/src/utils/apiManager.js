@@ -1,12 +1,10 @@
 import axios from 'axios';
-/*
+import BaseURL from './Constants';
+
 const ApiManager = axios.create({
-  baseURL: 'http://192.168.43.112:8800/api/',
+  baseURL: BaseURL,
   responseType: 'json',
   withCredentials: true,
 });
-*/
-
-const ApiManager = 'http://192.168.43.112:8800/api/';
 
 export default ApiManager;

@@ -75,7 +75,7 @@ const DatePickerComp = ({
           onPress={
             step < numOfQuestions - 1
               ? nextStep
-              : () => nav.navigate('Results', { answer: answers })
+              : () => nav.push('Results', { answer: answers })
           }
           style={{
             fontSize: 18,
