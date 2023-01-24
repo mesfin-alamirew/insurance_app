@@ -1,20 +1,26 @@
 import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import Services from './ServicesScreen';
-
+import React, { useContext } from 'react';
+import { AuthContext } from '../context/authContext.js';
 function HomeScreen({ navigation }) {
+  const { logout, userInfo } = useContext(AuthContext);
+
   return (
     <>
       <View>
         <View style={styles.btnContainer}>
           <Button
             color="teal"
-            title="Login"
-            onPress={() => navigation.navigate('Login')}
+            title="Logout"
+            onPress={() => {
+              logout();
+              navigation.navigate('Login');
+            }}
           />
         </View>
       </View>
       <View style={styles.headerTextContainer}>
-        <Text style={styles.headerText}>Good Morning</Text>
+        <Text style={styles.headerText}>Good Morning {userInfo.username}</Text>
 
         <View style={styles.infoContainer}>
           <Text style={styles.infoHeaderText}>Get COVID Cover!</Text>
