@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
+import LogoutComp from '../components/LogoutComp';
 
 const InsurancesScreen = ({ navigation }) => {
   const iTypes = [
@@ -14,23 +15,26 @@ const InsurancesScreen = ({ navigation }) => {
     { Id: 7, name: 'School', Icon: 'graduation-cap' },
   ];
   return (
-    <View style={styles.container}>
-      {iTypes.map((t) => (
-        <View key={t.Id} style={[styles.insuranceType, styles.elevation]}>
-          <TouchableOpacity
-            style={{ width: '100%' }}
-            onPress={() => navigation.navigate(`${t.Detail}`)}
-          >
-            <FontAwesome
-              name={t.Icon}
-              color="purple"
-              style={{ fontSize: 35, textAlign: 'center' }}
-            />
-            <Text style={styles.tText}>{t.name} Insurance </Text>
-          </TouchableOpacity>
-        </View>
-      ))}
-    </View>
+    <>
+      <LogoutComp />
+      <View style={styles.container}>
+        {iTypes.map((t) => (
+          <View key={t.Id} style={[styles.insuranceType, styles.elevation]}>
+            <TouchableOpacity
+              style={{ width: '100%' }}
+              onPress={() => navigation.navigate(`${t.Detail}`)}
+            >
+              <FontAwesome
+                name={t.Icon}
+                color="purple"
+                style={{ fontSize: 35, textAlign: 'center' }}
+              />
+              <Text style={styles.tText}>{t.name} Insurance </Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </View>
+    </>
   );
 };
 

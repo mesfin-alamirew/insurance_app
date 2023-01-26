@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const InsuranceItem = ({ insurance }) => {
+const InsuranceItemComp = ({ insurance }) => {
   return (
     <View style={{ borderBottomWidth: 1, padding: 10 }}>
       <Text>Name: {insurance.name}</Text>
@@ -14,6 +14,6 @@ const InsuranceItem = ({ insurance }) => {
   );
 };
 
-export default InsuranceItem;
+export default InsuranceItemComp;
 
 const styles = StyleSheet.create({});

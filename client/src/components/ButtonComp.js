@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function ButtonCom({
+export default function ButtonComp({
   nav,
   step,
   numOfQuestions,

@@ -2,8 +2,9 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import useFetch from '../hooks/useFetch.js';
-import InsuranceItem from '../components/InsuranceItem.js';
+import InsuranceItemComp from '../components/InsuranceItemComp.js';
 import * as c from '../utils/Constants.js';
+import LogoutComp from '../components/LogoutComp.js';
 export default function ResultScreen({ route, navigation }) {
   const { data, loading, error } = useFetch(`${c.API_URL}insurances`);
   const { answer } = route.params;
@@ -22,6 +23,7 @@ export default function ResultScreen({ route, navigation }) {
   }
   return (
     <>
+      <LogoutComp />
       <View>
         <Text
           style={{
@@ -49,7 +51,7 @@ export default function ResultScreen({ route, navigation }) {
         <FlatList
           data={data}
           keyExtractor={(insurance) => insurance._id}
-          renderItem={({ item }) => <InsuranceItem insurance={item} />}
+          renderItem={({ item }) => <InsuranceItemComp insurance={item} />}
         />
       </View>
     </>

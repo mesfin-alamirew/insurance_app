@@ -2,23 +2,14 @@ import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import Services from './ServicesScreen';
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/authContext.js';
+import LogoutComp from '../components/LogoutComp';
 function HomeScreen({ navigation }) {
-  const { logout, userInfo } = useContext(AuthContext);
+  const { userInfo } = useContext(AuthContext);
 
   return (
     <>
-      <View>
-        <View style={styles.btnContainer}>
-          <Button
-            color="teal"
-            title="Logout"
-            onPress={() => {
-              logout();
-              navigation.navigate('Login');
-            }}
-          />
-        </View>
-      </View>
+      <LogoutComp />
+
       <View style={styles.headerTextContainer}>
         <Text style={styles.headerText}>Good Morning {userInfo.username}</Text>
 
@@ -70,5 +61,17 @@ const styles = StyleSheet.create({
   btnContainer: {
     marginTop: 10,
     width: '30%',
+  },
+
+  roundButton: {
+    marginTop: 10,
+    left: 200,
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    backgroundColor: 'teal',
   },
 });

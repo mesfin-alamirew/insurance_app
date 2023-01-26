@@ -16,6 +16,7 @@ import { AuthContext } from '../context/authContext.js';
 import axios from 'axios';
 import * as c from '../utils/Constants';
 export default function LoginScreen({ navigation }) {
+  const { isLoading, token, login, logout } = useContext(AuthContext);
   const [data, setData] = useState({
     username: '',
     password: '',
@@ -25,7 +26,6 @@ export default function LoginScreen({ navigation }) {
     isValidPassword: true,
   });
 
-  const { isLoading, token, login, logout } = useContext(AuthContext);
   const textInputChange = (val) => {
     if (val.trim().length >= 4) {
       setData({
@@ -190,7 +190,7 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.textFailed}> </Text>
         )}
         <View style={styles.wrapperInput}>
-          <Feather name="check-circle" color="green" size={20} />
+          <Feather name="check-circle" size={20} />
           <TextInput
             placeholder="Password"
             placeholderTextColor="#666666"
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: 'teal',
     borderRadius: 5,
     marginTop: 25,
   },

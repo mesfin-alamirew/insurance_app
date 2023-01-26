@@ -10,14 +10,14 @@ import {
 import { useState, useEffect } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { FontAwesome } from '@expo/vector-icons';
-import ButtonComp from '../components/ButtonCom';
+import ButtonComp from './ButtonComp';
 import InputComp from './InputComp';
 import DatePickerComp from './DatePickerComp';
 
 import DropDownPickerComp from './DatePickerComp';
 import DropDownPicker from 'react-native-dropdown-picker';
 import DropDownComp from './DropDownComp';
-const StepOne = ({
+const StepComp = ({
   nav,
   step,
   loading,
@@ -163,7 +163,7 @@ const StepOne = ({
   );
 };
 
-export default StepOne;
+export default StepComp;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
