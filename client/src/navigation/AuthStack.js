@@ -7,6 +7,7 @@ import AppStack from './AppStack';
 import { NavigationContainer } from '@react-navigation/native';
 import { View } from 'react-native';
 import { ActivityIndicator } from 'react-native';
+import TabNavigator from './TabNavigator';
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
@@ -20,7 +21,7 @@ const AuthStack = () => {
   return (
     <NavigationContainer>
       {token !== null ? (
-        <AppStack />
+        <TabNavigator />
       ) : (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Login" component={LoginScreen} />

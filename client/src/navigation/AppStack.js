@@ -6,20 +6,21 @@ import InsuranceScreen from '../screens/InsuranceScreen';
 import InsurancesScreen from '../screens/InsurancesScreen';
 import ResultScreen from '../screens/ResultScreen';
 import QuestionsCmp from '../components/QuestionsComp';
-import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Services" component={ServicesScreen} />
-      <Stack.Screen name="Insurance" component={InsuranceScreen} />
-      <Stack.Screen name="Insurances" component={InsurancesScreen} />
-      <Stack.Screen name="Results" component={ResultScreen} />
-      <Stack.Screen name="Questions" component={QuestionsCmp} />
-    </Stack.Navigator>
+    <>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home1" component={HomeScreen} />
+        <Stack.Screen name="Services1" component={ServicesScreen} />
+        <Stack.Screen name="Insurance" component={InsuranceScreen} />
+        <Stack.Screen name="Insurances" component={InsurancesScreen} />
+        <Stack.Screen name="Results" component={ResultScreen} />
+        <Stack.Screen name="Questions" component={QuestionsCmp} />
+      </Stack.Navigator>
+    </>
   );
 };
 

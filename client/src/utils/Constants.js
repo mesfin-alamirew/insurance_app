@@ -7,5 +7,5 @@ const ApiManager = axios.create({
 });
 */
 
-export const API_URL = 'http://172.20.254.180:8800/api/';
+export const API_URL = 'http://172.20.8.29:8800/api/';
 export const COLOR = 'teal';

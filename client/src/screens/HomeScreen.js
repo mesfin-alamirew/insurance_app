@@ -11,7 +11,7 @@ function HomeScreen({ navigation }) {
       <LogoutComp />
 
       <View style={styles.headerTextContainer}>
-        <Text style={styles.headerText}>Good Morning {userInfo.username}</Text>
+        <Text style={styles.headerText}>WELCOME </Text>
 
         <View style={styles.infoContainer}>
           <Text style={styles.infoHeaderText}>Get COVID Cover!</Text>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerTextContainer: {
-    marginTop: 50,
+    //marginTop: 10,
   },
   headerText: {
     paddingLeft: 20,
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     color: 'teal',
   },
   infoContainer: {
-    marginTop: 10,
+    marginLeft: 10,
+    marginRight: 10,
     padding: 20,
     backgroundColor: 'skyblue',
   },
@@ -61,17 +62,5 @@ const styles = StyleSheet.create({
   btnContainer: {
     marginTop: 10,
     width: '30%',
-  },
-
-  roundButton: {
-    marginTop: 10,
-    left: 200,
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    borderRadius: 100,
-    backgroundColor: 'teal',
   },
 });
