@@ -11,7 +11,7 @@ function HomeScreen({ navigation }) {
       <LogoutComp />
 
       <View style={styles.headerTextContainer}>
-        <Text style={styles.headerText}>WELCOME </Text>
+        <Text style={styles.headerText}>WELCOME {userInfo.username}</Text>
 
         <View style={styles.infoContainer}>
           <Text style={styles.infoHeaderText}>Get COVID Cover!</Text>

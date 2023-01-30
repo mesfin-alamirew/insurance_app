@@ -13,16 +13,17 @@ const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     setIsLoading(true);
     try {
+      //const { data, loading, error } = useFetch(`${c.API_URL}auth/login`);
       const user = await axios.post(`${c.API_URL}auth/login`, {
         username,
         password,
       });
-      let uInfo = user.data;
-      setUserInfo(uInfo);
-      setToken(uInfo.token);
+      //let uInfo = user.data;
+      setUserInfo(user.data);
+      setToken(user.data.token);
 
-      AsyncStorage.setItem('userInfo', JSON.stringify(userInfo));
-      AsyncStorage.setItem('userToken', userInfo.token);
+      await AsyncStorage.setItem('userInfo', JSON.stringify(user.data));
+      await AsyncStorage.setItem('userToken', user.data.token);
     } catch (err) {
       console.log(`Login error ${err}`);
     }
@@ -30,11 +31,11 @@ const AuthProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  const logout = () => {
+  const logout = async () => {
     setIsLoading(true);
     setToken(null);
-    AsyncStorage.removeItem('userInfo');
-    AsyncStorage.removeItem('userToken');
+    await AsyncStorage.removeItem('userInfo');
+    await AsyncStorage.removeItem('userToken');
     setIsLoading(false);
   };
 
@@ -46,7 +47,7 @@ const AuthProvider = ({ children }) => {
 
       userInfo = JSON.parse(userInfo);
       if (userInfo) {
-        setToken(userInfo);
+        setUserInfo(userInfo);
         setToken(userToken);
       }
       setIsLoading(false);
